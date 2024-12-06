@@ -1,11 +1,12 @@
 package com.projetomonitoramente.unijorgeav3.dtos.request;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
 
 public record SensorTypeRequestDTO(
-        @NotBlank
+        @NotEmpty
         String name,
-        @NotBlank
+        @NotEmpty
         String units
 ) {
 }
