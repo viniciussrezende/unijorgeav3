@@ -3,7 +3,6 @@ package com.projetomonitoramente.unijorgeav3.controllers;
 
 import com.projetomonitoramente.unijorgeav3.dtos.request.DeviceRequestDTO;
 import com.projetomonitoramente.unijorgeav3.dtos.response.DeviceResponseDTO;
-import com.projetomonitoramente.unijorgeav3.models.Device;
 import com.projetomonitoramente.unijorgeav3.services.DeviceService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,9 +27,9 @@ public class DeviceController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Device>> getAllDevices(){
-        List<Device> devices = deviceService.getAllDevices();
-        return ResponseEntity.status(HttpStatus.CREATED).body(devices);
+    public ResponseEntity<List<DeviceResponseDTO>> getAllDevices(){
+        List<DeviceResponseDTO> deviceResponseDTOS = deviceService.getAllDevices();
+        return ResponseEntity.status(HttpStatus.CREATED).body(deviceResponseDTOS);
     }
 
 }

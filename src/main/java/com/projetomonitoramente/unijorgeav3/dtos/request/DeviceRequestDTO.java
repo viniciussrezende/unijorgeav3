@@ -1,19 +1,20 @@
 package com.projetomonitoramente.unijorgeav3.dtos.request;
 
 import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 public record DeviceRequestDTO(
-        @NotNull(message = "name cannot be null")
-        @NotEmpty(message = "name cannot be empty")
+
+        @NotEmpty(message = "Name cannot be empty")
+        @Size(min = 5, max = 20, message = "Name must be between 5 and 20 characters")
         String name,
 
-        @NotNull(message = "description cannot be null")
-        @NotEmpty(message = "description cannot be empty")
+        @NotEmpty(message = "Description cannot be empty")
+        @Size(min = 5, max = 100, message = "Description must be between 5 and 100 characters")
         String description,
 
-        @NotNull(message = "location cannot be null")
-        @NotEmpty(message = "location cannot be empty")
+        @NotEmpty(message = "Location cannot be empty")
+        @Size(min = 5, max = 50, message = "Location must be between 5 and 50 characters")
         String location
 ) {
 }
